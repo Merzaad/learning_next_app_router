@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <head />
       <body>
         <div className={styles.layout}>
-          <div className={styles.navbar}>HELLLLLLLLOOOOOOOOOOOOOOOOOOOOOOOOO</div>
+          <div className={styles.navbar}>FETCH</div>
           {children}
         </div>
       </body>
