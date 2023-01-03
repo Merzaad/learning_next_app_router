@@ -16,13 +16,13 @@ export default function Page() {
   }
   return (
     <div className={styles.main}>
-      <div className={styles.card} onClick={navigateToDefault}>
+      <div className='card' onClick={navigateToDefault}>
         default
       </div>
-      <div className={styles.card} onClick={navigateToRevalidate}>
+      <div className='card' onClick={navigateToRevalidate}>
         revalidate
       </div>
-      <div className={styles.card} onClick={navigateToNoCache}>
+      <div className='card' onClick={navigateToNoCache}>
         noCache
       </div>
     </div>

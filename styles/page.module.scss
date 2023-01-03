@@ -5,25 +5,4 @@
   justify-content: center;
   height: 100%;
   align-items: center;
-
-  .card {
-    width: 200px;
-    height: 200px;
-    border: 1px solid rgb(255, 255, 255, .1);
-    border-radius: 15px;
-    box-shadow: 0px 0px 5px #00000060;
-    background: #ffffff06;
-    cursor: pointer;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &:hover {
-      background-color: #FFFFFF12;
-
-    }
-
-    transition-duration: 200ms;
-  }
 }
