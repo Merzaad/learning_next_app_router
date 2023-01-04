@@ -1,9 +1,10 @@
 import styles from '../../styles/revalidate/page.module.scss'
+import ClienSideButton from './ClientSideButton'
 
 const getData = async () => {
   try {
     const result = await fetch('https://api.blockchair.com/ethereum/stats', {
-      next: { revalidate: 100 },
+      next: { revalidate: 10 },
     })
 
     return result.json()
@@ -14,5 +15,10 @@ const getData = async () => {
 export default async function Page() {
   const test = await getData()
   const result = JSON.stringify(test, undefined, 10) || test.message
-  return <div className={styles.cprtyo}>{result}</div>
+  return (
+    <div className={styles.revalidate}>
+      <ClienSideButton />
+      <div>{result}</div>
+    </div>
+  )
 }
