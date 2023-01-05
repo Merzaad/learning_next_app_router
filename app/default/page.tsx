@@ -6,7 +6,8 @@ const getData = async () => {
     const result = await fetch('https://api.blockchair.com/ethereum/stats')
     return result.json()
   } catch (error) {
-    throw new Error('todo')
+    // throw new Error('todo')
+    return 'todo'
   }
 }
 export default async function Page() {
