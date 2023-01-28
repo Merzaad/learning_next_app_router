@@ -1,4 +1,4 @@
-import styles from '../../styles/Cprtyo/page.module.scss'
+import styles from '../../styles/cprtyo/page.module.scss'
 
 const getData = async () => {
   try {
