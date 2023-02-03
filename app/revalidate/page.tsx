@@ -9,16 +9,17 @@ const getData = async () => {
 
     return result.json()
   } catch (error) {
-    return error
+    return { data: {}, context: {} }
   }
 }
 export default async function Page() {
-  const test = await getData()
-  const result = JSON.stringify(test, undefined, 10) || test.message
+  const { data, context } = await getData()
+  const { market_price_usd } = data
+  const { time } = context
   return (
     <div className={styles.revalidate}>
-      <ClienSideButton />
-      <div>{result}</div>
+      <ClienSideButton time={time || 'error'} />
+      <button className='card'>{market_price_usd || 'error'}</button>
     </div>
   )
 }

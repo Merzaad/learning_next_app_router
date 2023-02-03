@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 
-export default function ClienSideButton() {
+export default function ClienSideButton({ time }: { time: number | string }) {
   const [timer, setTimer] = useState(60)
 
   useEffect(() => {
@@ -17,12 +17,10 @@ export default function ClienSideButton() {
   const resetTimer = () => setTimer(60)
   return (
     <>
-      <button className='card'  >{timer}</button>
-      <br />
       <button className='card' onClick={resetTimer}>
-        reset timer
+        {timer}
       </button>
-      <br />
+      <button className='card'> time: {time}</button>
     </>
   )
 }
