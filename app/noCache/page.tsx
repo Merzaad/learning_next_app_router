@@ -5,14 +5,14 @@ const getData = async (coin: string) => {
     const result = await fetch(`https://api.blockchair.com/${coin}/stats`, {
       cache: 'no-store',
     })
-
-    return result.json()
+    if (result.ok) return result.json()
+    return {}
   } catch (error) {
     return error
   }
 }
 export default async function Page() {
-  const [ethData, btcData] = await Promise.all([getData('etherium'), getData('bitcoin')])
+  const [ethData, btcData] = await Promise.all([getData('ethereum'), getData('bitcoin')])
 
   return (
     <div className={styles.noCache}>
