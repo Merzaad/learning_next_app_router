@@ -1,4 +1,3 @@
-import styles from '../../styles/revalidate/page.module.scss'
 import ClienSideButton from './ClientSideButton'
 
 const getData = async () => {
@@ -17,7 +16,7 @@ export default async function Page() {
   const { market_price_usd } = data
   const { time } = context
   return (
-    <div className={styles.revalidate}>
+    <div>
       <ClienSideButton time={time || 'error'} />
       <button className='card'>{market_price_usd || 'error'}</button>
     </div>

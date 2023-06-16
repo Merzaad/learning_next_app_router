@@ -1,5 +1,3 @@
-import styles from '../../styles/noCache/page.module.scss'
-
 const getData = async (coin: string) => {
   try {
     const result = await fetch(`https://api.blockchair.com/${coin}/stats`, {
@@ -15,7 +13,7 @@ export default async function Page() {
   const [ethData, btcData] = await Promise.all([getData('ethereum'), getData('bitcoin')])
 
   return (
-    <div className={styles.noCache}>
+    <div>
       <div className='card'>{ethData.data?.market_price_usd || 'error todo'}</div>
       <div className='card'>{btcData.data?.market_price_usd || 'error todo'}</div>
     </div>

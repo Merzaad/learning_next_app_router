@@ -1,5 +1,3 @@
-import styles from '../styles/layout.module.scss'
-import '../styles/globals.css'
 import HomeButton from './HomeButton'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -7,8 +5,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html>
       <head />
       <body>
-        <div className={styles.layout}>
-          <div className={styles.navbar}>
+        <div>
+          <div>
             <HomeButton />
           </div>
           {children}
@@ -17,4 +15,3 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     </html>
   )
 }
-

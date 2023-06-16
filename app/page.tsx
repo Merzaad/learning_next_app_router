@@ -1,7 +1,7 @@
 'use client'
 
-import styles from '../styles/page.module.scss'
 import { useRouter } from 'next/navigation'
+import './globals.css'
 
 export default function Page() {
   const router = useRouter()
@@ -15,7 +15,7 @@ export default function Page() {
     router.push('/noCache')
   }
   return (
-    <div className={styles.main}>
+    <div>
       <div className='card' onClick={navigateToDefault}>
         default
       </div>
