@@ -13,9 +13,9 @@ export default async function Page() {
   const [ethData, btcData] = await Promise.all([getData('ethereum'), getData('bitcoin')])
 
   return (
-    <div>
-      <div className='card'>{ethData.data?.market_price_usd || 'error todo'}</div>
-      <div className='card'>{btcData.data?.market_price_usd || 'error todo'}</div>
-    </div>
+    <>
+      <div>{ethData.data?.market_price_usd || 'error todo'}</div>
+      <div>{btcData.data?.market_price_usd || 'error todo'}</div>
+    </>
   )
 }

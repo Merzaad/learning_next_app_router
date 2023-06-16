@@ -17,10 +17,8 @@ export default function ClienSideButton({ time }: { time: number | string }) {
   const resetTimer = () => setTimer(60)
   return (
     <>
-      <button className='card' onClick={resetTimer}>
-        {timer}
-      </button>
-      <button className='card'> time: {time}</button>
+      <button onClick={resetTimer}>{timer}</button>
+      <button> time: {time}</button>
     </>
   )
 }

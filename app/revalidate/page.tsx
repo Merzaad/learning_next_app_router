@@ -18,7 +18,7 @@ export default async function Page() {
   return (
     <div>
       <ClienSideButton time={time || 'error'} />
-      <button className='card'>{market_price_usd || 'error'}</button>
+      <button>{market_price_usd || 'error'}</button>
     </div>
   )
 }

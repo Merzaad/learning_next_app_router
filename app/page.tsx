@@ -16,15 +16,9 @@ export default function Page() {
   }
   return (
     <div>
-      <div className='card' onClick={navigateToDefault}>
-        default
-      </div>
-      <div className='card' onClick={navigateToRevalidate}>
-        revalidate
-      </div>
-      <div className='card' onClick={navigateToNoCache}>
-        noCache
-      </div>
+      <div onClick={navigateToDefault}>default</div>
+      <div onClick={navigateToRevalidate}>revalidate</div>
+      <div onClick={navigateToNoCache}>noCache</div>
     </div>
   )
 }
