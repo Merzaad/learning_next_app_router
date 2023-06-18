@@ -1,16 +1,16 @@
-import HomeButton from './HomeButton'
+import { Metadata } from 'next'
+import Navbar from './Navbar'
+
+export const metadata: Metadata = {
+  title: 'learning_app_router',
+}
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html>
-      <head />
       <body>
-        <div>
-          <div>
-            <HomeButton />
-          </div>
-          {children}
-        </div>
+        <Navbar />
+        {children}
       </body>
     </html>
   )
