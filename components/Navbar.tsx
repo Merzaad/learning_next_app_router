@@ -4,7 +4,7 @@ import { usePathname, useRouter } from 'next/navigation'
 
 export default function Navbar() {
   const router = useRouter()
-  const routes = ['/', '/default', '/revalidate', '/noCache', '/cachedRender']
+  const routes = ['/', '/default', '/revalidate', '/noCache', '/cachedRender', '/dynamicRoute/test']
   const pathname = usePathname()
   return (
     <div className='flex items-center p-2 gap-2 flex-wrap'>
