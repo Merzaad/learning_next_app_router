@@ -1,5 +1,4 @@
-import ClienSideButton from './ClientSideButton'
-
+import TimeAgo from '@/components/TimeAgo'
 const getData = async () => {
   try {
     const result = await fetch('https://api.blockchair.com/ethereum/stats', {
@@ -8,16 +7,17 @@ const getData = async () => {
 
     return result.json()
   } catch (error) {
-    return { data: {}, context: {} }
+    return { data: {} }
   }
 }
 export default async function Page() {
-  const { data, context } = await getData()
-  const { market_price_usd } = data
-  const { time } = context
+  const {
+    data: { market_price_usd },
+  } = await getData()
+  const requestTime = Date.now() / 1000
   return (
     <div>
-      <ClienSideButton time={time || 'error'} />
+      <TimeAgo baseTime={requestTime} />
       <button>{market_price_usd || 'error'}</button>
     </div>
   )

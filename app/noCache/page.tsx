@@ -1,3 +1,5 @@
+import TimeAgo from '@/components/TimeAgo'
+
 const getData = async (coin: string) => {
   try {
     const result = await fetch(`https://api.blockchair.com/${coin}/stats`, {
@@ -11,11 +13,12 @@ const getData = async (coin: string) => {
 }
 export default async function Page() {
   const [ethData, btcData] = await Promise.all([getData('ethereum'), getData('bitcoin')])
-
+  const requestTime = Date.now() / 1000
   return (
     <>
       <div>{ethData.data?.market_price_usd || 'error todo'}</div>
       <div>{btcData.data?.market_price_usd || 'error todo'}</div>
+      <TimeAgo baseTime={requestTime} />
     </>
   )
 }
