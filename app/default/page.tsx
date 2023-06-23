@@ -11,13 +11,14 @@ const getData = async () => {
   }
 }
 export default async function Page() {
-  const test = await getData()
-  const result = JSON.stringify(test, undefined, 10) || test.message
+  const {
+    data: { market_price_usd },
+  } = await getData()
   const requestTime = Date.now() / 1000
   return (
     <>
-      <div>{result}</div>
-      <TimeAgo baseTime={requestTime} />{' '}
+      <div>{market_price_usd}</div>
+      <TimeAgo baseTime={requestTime} />
     </>
   )
 }

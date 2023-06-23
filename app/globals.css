@@ -14,8 +14,7 @@
   }
 }
 
-body {
+html {
   color: var(--foreground);
   background: var(--background);
-  padding: 1px;
 }
