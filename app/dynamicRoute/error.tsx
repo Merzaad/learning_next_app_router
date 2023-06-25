@@ -4,9 +4,11 @@ import Button from '@/components/Button'
 
 export default function Error({ error, reset }: { error: Error; reset: () => void }) {
   return (
-    <div>
+    <div className='rounded-lg bg-neutral-900 p-4 h-full grid'>
       <div>{error.message}</div>
-      <Button onClick={() => reset()}>reset</Button>
+      <div>
+        <Button onClick={() => reset()}>reset</Button>
+      </div>
     </div>
   )
 }
