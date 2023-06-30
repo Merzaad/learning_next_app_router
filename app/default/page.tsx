@@ -2,7 +2,6 @@ import TimeAgo from '@/components/TimeAgo'
 
 const getData = async () => {
   try {
-    console.log('test')
     const result = await fetch('https://api.blockchair.com/ethereum/stats')
     return result.json()
   } catch (error) {
