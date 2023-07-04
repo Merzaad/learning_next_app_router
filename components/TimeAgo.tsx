@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 
 export default function TimeAgo({ baseTime }: { baseTime: number }) {
-  const [time, setTime] = useState('0')
+  const [time, setTime] = useState(((Date.now() - baseTime) / 1000).toFixed(0))
   useEffect(() => {
     let timeout = setTimeout(() => {
       setTime(((Date.now() - baseTime) / 1000).toFixed(0))
