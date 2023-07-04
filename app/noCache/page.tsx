@@ -1,24 +1,20 @@
-import TimeAgo from '@/components/TimeAgo'
-
-const getData = async (coin: string) => {
+const getData = async () => {
   try {
-    const result = await fetch(`https://api.blockchair.com/${coin}/stats`, {
-      cache: 'no-store',
-    })
-    if (result.ok) return result.json()
-    return {}
+    const result = await fetch('https://api.blockchair.com/ethereum/stats', { cache: 'no-cache' })
+    const {
+      data: { market_price_usd },
+    } = await result.json()
+    return { price: market_price_usd, fetchedTime: String(new Date()) }
   } catch (error) {
-    return error
+    throw new Error('fetch error')
   }
 }
 export default async function Page() {
-  const [ethData, btcData] = await Promise.all([getData('ethereum'), getData('bitcoin')])
-  const requestTime = Date.now() / 1000
+  const { price, fetchedTime } = await getData()
   return (
-    <>
-      <div>{ethData.data?.market_price_usd || 'error todo'}</div>
-      <div>{btcData.data?.market_price_usd || 'error todo'}</div>
-      <TimeAgo baseTime={requestTime} />
-    </>
+    <div className='flex justify-center items-center bg-neutral-900 rounded-lg h-full flex-col gap-4'>
+      <div>{price} ETH/USDT</div>
+      <div>{fetchedTime}</div>
+    </div>
   )
 }
