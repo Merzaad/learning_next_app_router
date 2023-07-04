@@ -17,4 +17,5 @@
 html {
   color: var(--foreground);
   background: var(--background);
+  color-scheme: only dark;
 }

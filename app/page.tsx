@@ -1,7 +1,3 @@
 export default function Page() {
-  return (
-    <div className='flex gap-4 justify-center items-center border-1 border-cyan-500 p-2 '>
-      home page
-    </div>
-  )
+  return <div className='p-4 bg-neutral-900 rounded-lg h-full'>HOME</div>
 }

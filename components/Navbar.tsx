@@ -15,7 +15,7 @@ export default function Navbar() {
   ]
   const pathname = usePathname()
   return (
-    <div className='flex flex-col items-center gap-2 rounded-lg min-h-full bg-neutral-950 w-min  overflow-y-auto'>
+    <div className='flex flex-col items-center gap-2 rounded-lg min-h-full bg-neutral-950 w-min  overflow-y-auto dark:bg-neutral-950'>
       {routes.map((route) => (
         <div
           key={route}
