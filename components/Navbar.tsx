@@ -12,6 +12,7 @@ export default function Navbar() {
     '/routeGroup2',
     '/dynamicRoute',
     '/parallelRoutes',
+    '/nestingComponents',
   ]
   const pathname = usePathname()
   return (
