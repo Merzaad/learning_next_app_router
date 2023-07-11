@@ -1,5 +1,11 @@
 import TimeAgo from '@/components/TimeAgo'
+import { Metadata } from 'next'
 
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: 'default',
+  }
+}
 const getData = async () => {
   try {
     const result = await fetch('https://api.blockchair.com/ethereum/stats')
