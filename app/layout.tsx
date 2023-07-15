@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import Navbar from '../components/Navbar'
+import Navbar from '../layout/Navbar'
 import './_privateFolder/globals.css'
 
 export const metadata: Metadata = {

@@ -36,4 +36,3 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## issues
 
 - The revalidated page loads instantly with cached data and needs to be refreshed to display new data
-- Icon and generated icon don't work
