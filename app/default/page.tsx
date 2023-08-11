@@ -8,6 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 const getData = async () => {
   try {
+    console.log('prefetched')
     const result = await fetch('https://api.blockchair.com/ethereum/stats')
     const {
       data: { market_price_usd },

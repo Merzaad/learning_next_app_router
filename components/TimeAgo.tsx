@@ -12,7 +12,7 @@ export default function TimeAgo({ baseTime }: { baseTime: number }) {
   }, [time])
   return (
     <div className='px-2 text-white-500 border-1 rounded-lg bg-neutral-800 max-w-max p-2'>
-      rendred {time}s ago
+      fetched {time}s ago
     </div>
   )
 }
