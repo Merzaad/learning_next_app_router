@@ -1,5 +1,7 @@
 import TimeAgo from '@/components/TimeAgo'
 
+export const dynamic = 'force-dynamic'
+
 const getTime = async () => {
   const time = await (() =>
     new Promise<number>((resolve) => {
